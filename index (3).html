@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personalised English Tuition & School Tutoring</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-main: #fbf9f6;
+            --bg-light: #f5f3f0;
+            --text-dark: #1b1c1a;
+            --text-gray: #434655;
+            --text-light: #737686;
+            --primary-blue: #004ac6;
+            --primary-brown: #904d00;
+            --border-gray: #c3c6d7;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--bg-main);
+            line-height: 1.6;
+        }
+
+        html, body {
+            width: 100%;
+            overflow-x: hidden;
+        }
+
+        /* HEADER */
+        .header {
+            background: var(--white);
+            border-bottom: 1px solid #e5e5e5;
+            padding: 20px 40px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: bold;
+            color: var(--text-dark);
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 36px;
+            height: 36px;
+            background: var(--primary-blue);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 20px;
+        }
+
+        .nav {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: var(--text-gray);
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .nav a:hover {
+            color: var(--primary-blue);
+        }
+
+        .cta-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .cta-header button {
+            background: var(--primary-blue);
+            color: var(--white);
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        /* MAIN CONTAINER */
+        .main {
+            background: var(--bg-main);
+        }
+
+        /* SECTIONS */
+        .section {
+            padding: 80px 40px;
+        }
+
+        .section-container {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            background: var(--bg-main);
+            padding: 80px 104px;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            align-items: center;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .hero-content h1 {
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 1.2;
+            color: var(--text-dark);
+            margin: 20px 0;
+            letter-spacing: -1px;
+        }
+
+        .pill-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,0.7);
+            border-radius: 9999px;
+            padding: 6px 14px;
+            margin-bottom: 20px;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+        }
+
+        .pill-badge::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--primary-brown);
+            border-radius: 50%;
+        }
+
+        .pill-text {
+            font-size: 12px;
+            font-weight: 700;
+            color: #2f1500;
+            letter-spacing: 0.48px;
+            text-transform: none;
+        }
+
+        .hero-para {
+            font-size: 18px;
+            color: var(--text-gray);
+            line-height: 1.6;
+            margin: 20px 0;
+        }
+
+        .hero-para-sm {
+            font-size: 16px;
+            color: rgba(67,70,85,0.9);
+            margin: 20px 0;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            margin: 30px 0;
+        }
+
+        .btn {
+            padding: 14px 28px;
+            border-radius: 9999px;
+            border: none;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--primary-brown);
+            color: var(--white);
+            box-shadow: 0 4px 7px rgba(144,77,0,0.22);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(144,77,0,0.3);
+        }
+
+        .btn-secondary {
+            background: var(--white);
+            color: var(--primary-blue);
+            box-shadow: 0 1px 1px rgba(0,0,0,0.05);
+        }
+
+        .btn-secondary:hover {
+            background: #f9f9f9;
+        }
+
+        .trust-strip {
+            display: flex;
+            gap: 8px;
+            margin-top: 20px;
+            font-size: 12px;
+            color: rgba(67,70,85,0.8);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+        }
+
+        .trust-strip span::before {
+            content: '';
+            display: inline-block;
+            width: 4px;
+            height: 4px;
+            background: var(--border-gray);
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .hero-image img {
+            width: 100%;
+            border-radius: 24px;
+            box-shadow: 0 12px 36px -6px rgba(27,42,74,0.12);
+        }
+
+        /* TRUST STRIP SECTION */
+        .trust-section {
+            background: var(--bg-main);
+            padding: 24px 104px;
+        }
+
+        .trust-cards {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            background: var(--white);
+            padding: 24px;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(27,42,74,0.06);
+        }
+
+        .trust-card {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+        }
+
+        .trust-card-icon {
+            width: 48px;
+            height: 48px;
+            background: #dbe1ff;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .trust-card-text h3 {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 4px;
+        }
+
+        .trust-card-text p {
+            font-size: 12px;
+            color: var(--text-gray);
+            line-height: 1.3;
+        }
+
+        /* ABOUT SECTION */
+        .about-section {
+            background: var(--bg-main);
+            padding: 80px 104px;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            align-items: center;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .about-image {
+            background: var(--white);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(27,42,74,0.08);
+        }
+
+        .about-image img {
+            width: 100%;
+            display: block;
+        }
+
+        .about-content h2 {
+            font-size: 40px;
+            font-weight: 700;
+            line-height: 1.3;
+            color: var(--text-dark);
+            margin: 20px 0;
+            letter-spacing: -1px;
+        }
+
+        .section-label {
+            display: inline-block;
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--primary-blue);
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            margin-bottom: 10px;
+        }
+
+        .numbered-blocks {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-top: 30px;
+        }
+
+        .numbered-block {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 20px;
+            display: flex;
+            gap: 16px;
+            box-shadow: 0 1px 1px rgba(0,0,0,0.05);
+        }
+
+        .block-number {
+            width: 40px;
+            height: 40px;
+            background: #dbe1ff;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: var(--primary-blue);
+            flex-shrink: 0;
+        }
+
+        .numbered-block:nth-child(2) .block-number {
+            background: transparent;
+            color: var(--primary-brown);
+        }
+
+        .numbered-block:nth-child(3) .block-number {
+            background: #d9e2ff;
+            color: #465577;
+        }
+
+        .block-content h3 {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+            letter-spacing: -0.2px;
+        }
+
+        .block-content p {
+            font-size: 14px;
+            color: var(--text-gray);
+            line-height: 1.6;
+        }
+
+        /* ACHIEVEMENT SECTION */
+        .achievement-section {
+            background: var(--bg-light);
+            padding: 80px 40px;
+        }
+
+        .achievement-header {
+            text-align: center;
+            max-width: 672px;
+            margin: 0 auto 48px;
+        }
+
+        .achievement-header h2 {
+            font-size: 40px;
+            font-weight: 700;
+            color: var(--text-dark);
+            line-height: 1.2;
+            margin: 20px 0;
+            letter-spacing: -1px;
+        }
+
+        .achievement-header p {
+            font-size: 16px;
+            color: var(--text-gray);
+            line-height: 1.6;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 1px 1px rgba(0,0,0,0.05);
+        }
+
+        .card-icon {
+            width: 48px;
+            height: 48px;
+            background: #dbe1ff;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+        }
+
+        .card h3 {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+            letter-spacing: -0.2px;
+        }
+
+        .card p {
+            font-size: 16px;
+            color: var(--text-gray);
+            line-height: 1.6;
+        }
+
+        /* FORM SECTION */
+        .form-section {
+            background: var(--bg-light);
+            padding: 80px 104px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            align-items: flex-start;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .form-left h2 {
+            font-size: 40px;
+            font-weight: 700;
+            color: var(--text-dark);
+            line-height: 1.2;
+            margin: 20px 0;
+            letter-spacing: -1px;
+        }
+
+        .form-left p {
+            font-size: 18px;
+            color: var(--text-gray);
+            line-height: 1.6;
+            margin: 20px 0;
+        }
+
+        .checklist {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin: 30px 0;
+        }
+
+        .checklist-item {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+        }
+
+        .checklist-item::before {
+            content: '✓';
+            color: var(--primary-brown);
+            font-weight: 700;
+            font-size: 18px;
+            flex-shrink: 0;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .checklist-item span {
+            font-size: 16px;
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+
+        /* FORM CARD */
+        .form-card {
+            background: var(--white);
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 12px 36px -6px rgba(27,42,74,0.08);
+        }
+
+        .form-card h3 {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+            letter-spacing: -0.42px;
+        }
+
+        .form-card > p {
+            font-size: 14px;
+            color: var(--text-gray);
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .form {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .form-group.full {
+            grid-column: 1 / -1;
+        }
+
+        .form-label {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-dark);
+            letter-spacing: 0.21px;
+        }
+
+        .form-input,
+        .form-select,
+        .form-textarea {
+            background: var(--white);
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 14px 16px;
+            font-size: 16px;
+            font-family: inherit;
+            color: var(--text-dark);
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+        }
+
+        .form-input::placeholder,
+        .form-textarea::placeholder {
+            color: var(--text-light);
+        }
+
+        .form-input:focus,
+        .form-select:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 3px rgba(0,74,198,0.1);
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 110px;
+        }
+
+        .form-button {
+            background: var(--primary-brown);
+            color: var(--white);
+            border: none;
+            border-radius: 12px;
+            padding: 14px 24px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(144,77,0,0.25);
+            transition: all 0.3s;
+            margin-top: 8px;
+        }
+
+        .form-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(144,77,0,0.3);
+        }
+
+        .form-button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .form-note {
+            font-size: 12px;
+            color: var(--text-gray);
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        /* SUCCESS/ERROR MESSAGES */
+        .message {
+            padding: 12px 16px;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 14px;
+            margin-bottom: 16px;
+            display: none;
+        }
+
+        .message.show {
+            display: block;
+        }
+
+        .message.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .message.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        /* FOOTER */
+        .footer {
+            background: var(--white);
+            padding: 40px;
+            margin-top: 40px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 64px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .footer-section h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .footer-links a {
+            color: var(--text-gray);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-blue);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #e5e5e5;
+            font-size: 12px;
+            color: var(--text-gray);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .hero-grid,
+            .about-grid,
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .trust-cards {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .nav {
+                display: none;
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+
+            h2 {
+                font-size: 28px;
+            }
+
+            .section,
+            .hero,
+            .form-section,
+            .about-section {
+                padding: 40px 20px;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-container">
+            <a href="#" class="logo">
+                <div class="logo-icon">📚</div>
+                <div>
+                    <div style="font-size: 14px;">English Training</div>
+                    <div style="font-size: 11px; color: var(--text-gray); font-weight: 400;">School Tutoring</div>
+                </div>
+            </a>
+            <nav class="nav">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#approach">Approach</a>
+                <a href="#benefits">Benefits</a>
+                <a href="#reviews">Reviews</a>
+                <a href="#faq">FAQ</a>
+            </nav>
+            <div class="cta-header">
+                <button>Get in Touch</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="main">
+        <!-- HERO SECTION -->
+        <section class="hero" id="home">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <div class="pill-badge">
+                        <span class="pill-text">Personalised Tuition • Communicative English</span>
+                    </div>
+                    <h1>Helping Students Learn Better, Speak Better & Grow with Confidence</h1>
+                    <p class="hero-para">Personalised tuition and communicative English classes that help students understand their lessons, complete their homework, improve their academic skills and express themselves confidently in English.</p>
+                    <p class="hero-para-sm">Every student learns differently. That's why every child receives individual attention, guidance and support based on their learning needs.</p>
+                    <div class="cta-buttons">
+                        <button class="btn btn-primary" onclick="document.getElementById('enquiry-form').scrollIntoView({behavior: 'smooth'})">Enquire Now</button>
+                        <button class="btn btn-secondary">Explore Classes</button>
+                    </div>
+                    <div class="trust-strip">
+                        <span>INDIVIDUAL ATTENTION</span>
+                        <span>ACADEMIC SUPPORT</span>
+                        <span>ENGLISH COMMUNICATION</span>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://www.figma.com/api/mcp/asset/c9b3d006-73c5-4585-ac2b-0568b04014b5.png" alt="Tutor with student">
+                </div>
+            </div>
+        </section>
+
+        <!-- TRUST STRIP -->
+        <section class="trust-section">
+            <div class="trust-cards">
+                <div class="trust-card">
+                    <div class="trust-card-icon">📊</div>
+                    <div class="trust-card-text">
+                        <h3>Individual Attention</h3>
+                        <p>Personalised support for every student</p>
+                    </div>
+                </div>
+                <div class="trust-card">
+                    <div class="trust-card-icon">📝</div>
+                    <div class="trust-card-text">
+                        <h3>Homework Support</h3>
+                        <p>Guidance to complete & understand work</p>
+                    </div>
+                </div>
+                <div class="trust-card">
+                    <div class="trust-card-icon">🗣️</div>
+                    <div class="trust-card-text">
+                        <h3>English Speaking</h3>
+                        <p>Build confidence through conversation</p>
+                    </div>
+                </div>
+                <div class="trust-card">
+                    <div class="trust-card-icon">📚</div>
+                    <div class="trust-card-text">
+                        <h3>Learning Support</h3>
+                        <p>Clear explanations & consistent practice</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section class="about-section" id="about">
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="https://www.figma.com/api/mcp/asset/2e8c6de1-ad91-4e07-b7d5-5740b903cea9.png" alt="Teaching approach">
+                </div>
+                <div class="about-content">
+                    <span class="section-label">My Approach</span>
+                    <h2>More Than Just Tuition — Helping Students Become Better Learners</h2>
+                    <p style="color: var(--text-gray); margin: 20px 0; font-size: 16px;">My goal is not simply to help students finish their homework or prepare for the next exam. I help them understand what they study, develop better learning habits, communicate confidently and become more independent learners.</p>
+                    <div class="numbered-blocks">
+                        <div class="numbered-block">
+                            <div class="block-number">01</div>
+                            <div class="block-content">
+                                <h3>Understand</h3>
+                                <p>Lessons are explained clearly so students can understand concepts instead of simply memorising them.</p>
+                            </div>
+                        </div>
+                        <div class="numbered-block">
+                            <div class="block-number">02</div>
+                            <div class="block-content">
+                                <h3>Practise</h3>
+                                <p>Students get opportunities to practise what they learn through questions, activities and regular interaction.</p>
+                            </div>
+                        </div>
+                        <div class="numbered-block">
+                            <div class="block-number">03</div>
+                            <div class="block-content">
+                                <h3>Grow</h3>
+                                <p>With consistent guidance and encouragement, students can gradually become more confident learners and communicators.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BENEFITS SECTION -->
+        <section class="achievement-section" id="benefits">
+            <div class="achievement-header">
+                <span class="section-label">What Students Can Improve</span>
+                <h2>Small Improvements Can Make a Big Difference</h2>
+                <p>Every student's learning journey is different. The classes focus on building strong foundations while helping students become more confident and consistent.</p>
+            </div>
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-icon">📖</div>
+                    <h3>Better Academic Understanding</h3>
+                    <p>Clear explanations and regular practice help students understand their school subjects better.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">✏️</div>
+                    <h3>Homework Support</h3>
+                    <p>Students receive guidance with homework while learning how to complete their work with better understanding.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🗣️</div>
+                    <h3>Confident English Speaking</h3>
+                    <p>Students practise speaking English regularly so they can express their thoughts more naturally.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">⭐</div>
+                    <h3>Individual Attention</h3>
+                    <p>Each student receives support based on their learning level, strengths and areas that need improvement.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🎯</div>
+                    <h3>Better Learning Habits</h3>
+                    <p>Students are encouraged to become more organised, consistent and responsible with their studies.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">💬</div>
+                    <h3>Everyday Communication</h3>
+                    <p>English is taught as a communication skill, not simply as a subject to memorise.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FORM SECTION -->
+        <section class="form-section" id="enquiry-form">
+            <div class="form-grid">
+                <div class="form-left">
+                    <span class="section-label">Start Today</span>
+                    <h2>Want Your Child to Learn with More Confidence?</h2>
+                    <p>Let's understand your child's learning needs and see how the classes can help.</p>
+                    <div class="checklist">
+                        <div class="checklist-item">
+                            <span>Personalised learning support</span>
+                        </div>
+                        <div class="checklist-item">
+                            <span>Individual attention</span>
+                        </div>
+                        <div class="checklist-item">
+                            <span>Homework and schoolwork support</span>
+                        </div>
+                        <div class="checklist-item">
+                            <span>Communicative English practice</span>
+                        </div>
+                        <div class="checklist-item">
+                            <span>Confidence-building activities</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-card">
+                    <h3>Send an Enquiry</h3>
+                    <p>Fill in the details below to schedule an introductory conversation.</p>
+                    <div id="message" class="message"></div>
+                    <form class="form" id="enquiry-form-element">
+                        <div class="form-group">
+                            <label class="form-label">Name</label>
+                            <input type="text" class="form-input" id="name" placeholder="e.g. Meera Sharma" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-input" id="email" placeholder="e.g. meera@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Phone Number</label>
+                            <input type="tel" class="form-input" id="phone" placeholder="e.g. +91 98765 43210" required>
+                        </div>
+                        <button type="submit" class="form-button" id="submit-btn">Get in Touch</button>
+                    </form>
+                    <p class="form-note">We'll contact you to understand your child's requirements and discuss the available classes.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- REVIEWS SECTION -->
+        <section class="achievement-section" id="reviews" style="padding: 80px 40px; background: var(--bg-main);">
+            <div class="achievement-header">
+                <span class="section-label">Authentic Feedback</span>
+                <h2>What Parents & Students Say</h2>
+                <p>Every child's progress looks different. Here are some experiences shared by parents and students.</p>
+            </div>
+            <div class="cards-grid">
+                <div class="card" style="background: var(--white); border-radius: 16px; padding: 28px;">
+                    <p style="font-style: italic; margin-bottom: 16px;">"My child has become much more confident in speaking English. Earlier, she was hesitant to speak, but now she tries to communicate in English without being afraid of making mistakes."</p>
+                    <p style="font-weight: 600; color: var(--text-gray); font-size: 14px; border-top: 1px solid rgba(195,198,215,0.3); padding-top: 16px;">— Parent of a Student</p>
+                </div>
+                <div class="card" style="background: var(--white); border-radius: 16px; padding: 28px;">
+                    <p style="font-style: italic; margin-bottom: 16px;">"The individual attention really helped me understand the lessons better. I can now ask my doubts freely and get them explained clearly."</p>
+                    <p style="font-weight: 600; color: var(--text-gray); font-size: 14px; border-top: 1px solid rgba(195,198,215,0.3); padding-top: 16px;">— Student</p>
+                </div>
+                <div class="card" style="background: var(--white); border-radius: 16px; padding: 28px;">
+                    <p style="font-style: italic; margin-bottom: 16px;">"The classes have helped my child become more regular with homework and studies. She has also become more confident about her schoolwork."</p>
+                    <p style="font-weight: 600; color: var(--text-gray); font-size: 14px; border-top: 1px solid rgba(195,198,215,0.3); padding-top: 16px;">— Parent of a Student</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ SECTION -->
+        <section class="achievement-section" id="faq" style="padding: 80px 40px; background: var(--bg-light);">
+            <div class="achievement-header">
+                <span class="section-label">Help & Clarity</span>
+                <h2>Frequently Asked Questions</h2>
+            </div>
+            <div style="max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px;">
+                <div class="card" style="padding: 28px;">
+                    <p style="font-weight: 600; font-size: 18px; color: var(--text-dark); margin-bottom: 14px;">What classes do you offer?</p>
+                    <p style="font-size: 16px; color: var(--text-gray); line-height: 1.7;">I provide personalised school tuition, homework support and communicative English classes. The classes are designed to help students understand their schoolwork better, complete their homework with confidence, and develop their English speaking skills. Each class is tailored to the student's learning level, academic needs, and goals.</p>
+                </div>
+                <div class="card" style="padding: 28px;">
+                    <p style="font-weight: 600; font-size: 18px; color: var(--text-dark); margin-bottom: 14px;">Do students receive individual attention?</p>
+                    <p style="font-size: 16px; color: var(--text-gray); line-height: 1.7;">Yes, absolutely! Every student receives one-on-one attention tailored to their specific learning needs. I focus on understanding each child's strengths, challenges, learning style and goals. This means the guidance is personalised, focused and effective for each individual student.</p>
+                </div>
+                <div class="card" style="padding: 28px;">
+                    <p style="font-weight: 600; font-size: 18px; color: var(--text-dark); margin-bottom: 14px;">Will my child be encouraged to speak English in class?</p>
+                    <p style="font-size: 16px; color: var(--text-gray); line-height: 1.7;">Yes, definitely! Speaking practice is an important part of every class. Students are encouraged to speak English naturally in conversations, ask questions, share their thoughts and participate actively. The goal is to help them feel confident and comfortable expressing themselves in English without fear of making mistakes.</p>
+                </div>
+                <div class="card" style="padding: 28px;">
+                    <p style="font-weight: 600; font-size: 18px; color: var(--text-dark); margin-bottom: 14px;">Will the classes help improve school marks?</p>
+                    <p style="font-size: 16px; color: var(--text-gray); line-height: 1.7;">Yes! When students understand their lessons better, complete their homework properly and develop stronger learning habits, their academic performance naturally improves. The focus is on building a solid foundation, clear understanding and consistent practice—which directly helps students perform better in their school exams and assignments.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FINAL CTA -->
+        <section style="background: var(--primary-blue); padding: 80px 104px; border-radius: 24px; margin: 0 104px 40px; text-align: center; color: var(--white);">
+            <h2 style="font-size: 40px; font-weight: 700; margin-bottom: 20px; color: var(--white);">Give Your Child the Support to Learn and Communicate with Confidence</h2>
+            <p style="font-size: 18px; color: rgba(255,255,255,0.9); margin-bottom: 30px; line-height: 1.5;">Whether your child needs help with schoolwork, homework or English communication, personalised guidance can make learning a more comfortable and confident experience.</p>
+            <button class="btn btn-primary" onclick="document.getElementById('enquiry-form').scrollIntoView({behavior: 'smooth'})">Enquire Now</button>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About Us</h4>
+                <p style="font-size: 14px; color: var(--text-gray); line-height: 1.6;">Personalised tuition and communicative English classes for students who want to learn with confidence.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Navigation</h4>
+                <div class="footer-links">
+                    <a href="#home">Home</a>
+                    <a href="#about">About the Tutor</a>
+                    <a href="#approach">Classes & Approach</a>
+                    <a href="#benefits">Student Benefits</a>
+                    <a href="#reviews">Parent Reviews</a>
+                    <a href="#faq">Frequently Asked Questions</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Details</h4>
+                <p style="font-size: 14px; color: var(--text-gray); margin-bottom: 10px;">📧 email@example.com</p>
+                <p style="font-size: 14px; color: var(--text-gray); margin-bottom: 10px;">📱 +91 98765 43210</p>
+                <p style="font-size: 14px; color: var(--text-gray);">📍 Puducherry, India</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 English Tuition & School Tutoring. All rights reserved. | <a href="#" style="color: var(--primary-blue); text-decoration: none;">Privacy Policy</a> | <a href="#" style="color: var(--primary-blue); text-decoration: none;">Terms & Conditions</a></p>
+        </div>
+    </footer>
+
+    <!-- FORM SUBMISSION SCRIPT -->
+    <script>
+        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwhtF_lnUfpyskEH7f3H_Pz-jEp5pxXxa-V4n9KCeHDLRnxBDKlYiKJvGwCpnIFoUW7rw/exec';
+
+        const form = document.getElementById('enquiry-form-element');
+        const submitBtn = document.getElementById('submit-btn');
+        const messageDiv = document.getElementById('message');
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+
+            // Basic validation
+            if (!name) {
+                showError('Please enter your name');
+                return;
+            }
+            if (!email) {
+                showError('Please enter your email');
+                return;
+            }
+            if (!phone) {
+                showError('Please enter your phone number');
+                return;
+            }
+
+            // Disable button and show loading state
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+
+            // Build URL with query parameters
+            const url = SCRIPT_URL + '?' + new URLSearchParams({ name, email, phone });
+
+            // Submit form using fetch with GET and no-cors
+            fetch(url, { method: 'GET', mode: 'no-cors' })
+                .then(() => {
+                    showSuccess('Thank you! We will contact you soon.');
+                    form.reset();
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Get in Touch';
+                })
+                .catch(() => {
+                    showError('Thank you! We will contact you soon.');
+                    form.reset();
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Get in Touch';
+                });
+        });
+
+        function showSuccess(message) {
+            messageDiv.textContent = message;
+            messageDiv.className = 'message show success';
+            messageDiv.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function showError(message) {
+            messageDiv.textContent = message;
+            messageDiv.className = 'message show error';
+            messageDiv.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
